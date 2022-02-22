@@ -47,7 +47,13 @@ Los problemas de optimización que se pueden resolver son expresiones matemátic
 
 El framework utiliza un evaluador de expresiones matemáticas gratuito para poder evaluar las expresiones matemáticas. Para ello, se utiliza mXparser por ser una herramienta muy potente con grandes características. Este lo puedes encontrar aquí <http://mathparser.org>.
 
+El framework tiene tres clases el cual son los pilares para realizar una nueva ejecución de un problema integrado o insertados. Estas son las siguientes: 
 
+|Clase|Métodos|Utilidad|
+|--------------------|----------------------------|--------------------|
+|     **Problem**    | setNameProblem()<br />setFunction()<br />setOrderVariables()<br />setObj()<br />setBestKnownValue()<br />detectConstraints()<br /> ...    | Nombre<br />función matemática<br />orden de variables<br />objetivo (min o max)<br />mejor valor conocido<br />restricciones<br />...  |
+|   **Configurator** |    D    | 1 |
+|   **RunTsmbfoa**   |    D    | 1 |
 
 
 
