@@ -31,7 +31,7 @@ Los problemas de optimización que se pueden resolver son expresiones matemátic
 
 1. Para poder usar este framework necesita descargar el mismo en su versión lanzada:
 
-- TS-MBFOA Versión 1.1.2 [TS_MBFOA_1.1.2.zip](https://github.com/garcialopez/frameworkTSMBFOA/files/8113794/TS_MBFOA_1.1.2.zip "Descargar")
+- [TS_MBFOA_1.1.2.zip](https://github.com/garcialopez/frameworkTSMBFOA/files/8113794/TS_MBFOA_1.1.2.zip "Descargar")
 
 2. Para comenzar a utilzar la herramienta se necesita crear un nuevo proyecto en **Java** (Java Application), para este caso utilizaremos el IDE NetBeans 8.0.2.
 
