@@ -1,0 +1,14 @@
+org.mariuszgromada.math.mxparser.regressiontesting.Test018Thread
+org.mariuszgromada.math.mxparser.regressiontesting.PerformanceTests
+org.mariuszgromada.math.mxparser.regressiontesting.Test019Thread
+org.mariuszgromada.math.mxparser.regressiontesting.TestThread
+org.mariuszgromada.math.mxparser.regressiontesting.Test012Thread
+org.mariuszgromada.math.mxparser.regressiontesting.PerformanceTestResult
+org.mariuszgromada.math.mxparser.regressiontesting.Test020Thread
+org.mariuszgromada.math.mxparser.regressiontesting.Test011Thread
+org.mariuszgromada.math.mxparser.regressiontesting.Test015Thread
+org.mariuszgromada.math.mxparser.regressiontesting.Test016Thread
+org.mariuszgromada.math.mxparser.regressiontesting.Test014Thread
+org.mariuszgromada.math.mxparser.regressiontesting.TestSimpleCalcThread
+org.mariuszgromada.math.mxparser.regressiontesting.Test017Thread
+org.mariuszgromada.math.mxparser.regressiontesting.Test013Thread

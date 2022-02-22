@@ -1,0 +1,4 @@
+org.mariuszgromada.math.mxparser.regressiontesting.RegTestSyntax
+org.mariuszgromada.math.mxparser.regressiontesting.FunExt
+org.mariuszgromada.math.mxparser.regressiontesting.PiMultArgExt
+org.mariuszgromada.math.mxparser.regressiontesting.FunExtVar
