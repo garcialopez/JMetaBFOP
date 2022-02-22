@@ -55,11 +55,74 @@ El framework tiene tres clases el cual son los pilares para realizar una nueva e
 |   **Configurator** |    setSb<br />setStepSize<br />setNc<br />setScalingFactor<br />setBacteriaReproduce<br />setRepcycle<br />setEvaluations<br /> | cantidad de bacterias<br />amaño de paso<br />número de ciclos quimiotáxicos<br />factor de escalamiento<br />número de bacterias<br />frecuencia de reproducción<br />número de evaluaciones |
 |   **RunTsmbfoa**   |    run    | Incia el algoritmo |
 
-Para comenzar a usar este framework se creara un objeto de la Clase **Problem**:
+Para comenzar a usar este framework, dentro del metodo `Main` se creara un objeto de la Clase **Problem**:
 
 ~~~
-Problem problem;
+package ts_mbfofoa_run;
+
+public class Main {
+    public static void main(String[] args) {  
+    
+             Problem problem;       
+             
+    }          
+}
 ~~~
+
+Para poder asignarle un problema a dicho objeto creado, se puede utilizar los métodos de la tabla anterior o bien asignar un problema de optimización de los integrados el cual, puede ser uno de los siguientes: 
+
+- PressureVessel
+- ProcessSynthesisMINLP
+- TensionCompressionSpring
+- DesignReinforcedConcreteBeam
+- QuadraticallyConstrainedQuadraticProgram
+- G**01**_CEC2006 al G**13**_CEC2006
+- G**15**_CEC2006, G**17**_CEC2006, G**18**_CEC2006
+- G**21**_CEC2006 al G**24**_CEC2006
+
+Para ello se debe de hacer lo siguiente:
+
+~~~
+  problem = new TensionCompressionSpring();
+~~~
+
+Para calibrar los parametros propios del algoritmo se debe de usar los métodos de la tabla anterior o bien usar la configuración recomendada:
+
+~~~
+  Configurator configurator = problem.getRecommendedSetting();
+~~~
+
+Tambien se establece el número de ejecuciones independiente para la ejecución del algoritmo:
+
+~~~
+  problem.setExecutions(30);
+~~~
+
+Finalmente, se hace a ejecición del algoritmo:
+
+~~~
+  RunTsmbfoa stst = new RunTsmbfoa();
+  stst.run(problem, configurator, true, true); 
+~~~
+
+Nuestro código final queda de la siguiente manera:
+
+![image](https://user-images.githubusercontent.com/52833089/155073092-9e50300b-6999-4765-bc36-16668962ee66.png)
+
+AL final de la ejecución se muestra el resultado obtenido para el problema de optimización seleccionado o insertado:
+
+![image](https://user-images.githubusercontent.com/52833089/155073374-aeda1d23-6e85-4792-9bf3-58b67516f822.png)
+
+De igual manera muestra las estadísticas básicas: 
+![image](https://user-images.githubusercontent.com/52833089/155073481-261c2400-02be-49fc-bdf0-a5d34769050d.png)
+
+
+Puede visualizar los resultados completos en el siguiente archivo:
+[Resultados TS-MBFOA.txt](https://github.com/garcialopez/frameworkTSMBFOA/files/8114044/Resultados.TS-MBFOA.txt)
+
+
+
+
 
 
 
