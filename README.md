@@ -52,8 +52,16 @@ El framework tiene tres clases el cual son los pilares para realizar una nueva e
 |Clase|Métodos|Utilidad|
 |--------------------|----------------------------|--------------------|
 |     **Problem**    | setNameProblem<br />setFunction<br />setOrderVariables<br />setObj<br />setBestKnownValue<br />detectConstraints<br /> ...    | Nombre<br />función matemática<br />orden de variables<br />objetivo (min o max)<br />mejor valor conocido<br />restricciones<br />...  |
-|   **Configurator** |    setSb<br />setStepSize<br />setNc<br />setScalingFactor<br />setBacteriaReproduce<br />setRepcycle<br />setEvaluations<br /> | cantidad de bacterias<br />amaño de paso<br />número de ciclos quimiotáxicos<br />factor de escalamiento<br />frecuencia de reproducción<br />número de evaluaciones |
+|   **Configurator** |    setSb<br />setStepSize<br />setNc<br />setScalingFactor<br />setBacteriaReproduce<br />setRepcycle<br />setEvaluations<br /> | cantidad de bacterias<br />amaño de paso<br />número de ciclos quimiotáxicos<br />factor de escalamiento<br />número de bacterias<br />frecuencia de reproducción<br />número de evaluaciones |
 |   **RunTsmbfoa**   |    run    | Incia el algoritmo |
+
+Para comenzar a usar este framework se creara un objeto de la Clase **Problem**:
+
+~~~
+Problem problem;
+~~~
+
+
 
 
 
