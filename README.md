@@ -98,7 +98,7 @@ Tambien se establece el número de ejecuciones independiente para la ejecución 
   problem.setExecutions(30);
 ~~~
 
-Finalmente, se hace a ejecición del algoritmo:
+Finalmente, se hace la ejecución del algoritmo:
 
 ~~~
   RunTsmbfoa stst = new RunTsmbfoa();
