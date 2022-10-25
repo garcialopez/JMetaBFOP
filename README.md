@@ -31,7 +31,7 @@ Los problemas de optimización que se pueden resolver son expresiones matemátic
 
 1. Para poder usar este framework necesita descargar el mismo en su versión lanzada:
 
-- [TS_MBFOA_1.1.2.zip]([JMetaBFOP_v1.0.zip](https://github.com/garcialopez/JMetaBFOP/files/9856951/JMetaBFOP_v1.0.zip "Descargar")
+- [JMetaBFOP_v1.0.zip](https://github.com/garcialopez/JMetaBFOP/files/9856951/JMetaBFOP_v1.0.zip "Descargar")
 
 
 
