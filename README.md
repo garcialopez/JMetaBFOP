@@ -1,4 +1,4 @@
-# Framework Java del TS-MBFOA
+# JMetaBFOP
 
 El **TS-MBFOA** es un algoritmo basado en el forrajeo de bacterias y funciona para resolver problemas de optimización global.
 
