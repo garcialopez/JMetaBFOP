@@ -1,4 +1,4 @@
-# Framework Java del TS-MBFOA
+# JMetaBFOP
 
 El **TS-MBFOA** es un algoritmo basado en el forrajeo de bacterias y funciona para resolver problemas de optimización global.
 
@@ -31,8 +31,7 @@ Los problemas de optimización que se pueden resolver son expresiones matemátic
 
 1. Para poder usar este framework necesita descargar el mismo en su versión lanzada:
 
-- [JMetaBFOP_v1.0.zip](https://github.com/garcialopez/JMetaBFOP/files/9856951/JMetaBFOP_v1.0.zip "Descargar")
-
+- [JMetaBFOP_v1.0.zip](https://github.com/garcialopez/JMetaBFOP/files/9865880/JMetaBFOP_v1.0.zip "Descargar")
 
 
 2. Para comenzar a utilzar la herramienta se necesita crear un nuevo proyecto en **Java** (Java Application), para este caso utilizaremos el IDE NetBeans 8.0.2.
