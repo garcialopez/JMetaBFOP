@@ -114,7 +114,7 @@ Similarly, it shows the basic statistics:
 
 
 You can view the complete results in the following file:
-[Resultados TS-MBFOA.txt](https://github.com/garcialopez/frameworkTSMBFOA/files/8114044/Resultados.TS-MBFOA.txt)
+[Results TS-MBFOA.txt](https://github.com/garcialopez/frameworkTSMBFOA/files/8114044/Resultados.TS-MBFOA.txt)
 
 
 
