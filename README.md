@@ -21,7 +21,7 @@ The optimization problems that can be solved are mathematical expressions that m
 
 **An example of an optimization problem is the following:**
 
-![image](https://user-images.githubusercontent.com/52833089/155066384-74753153-a297-40f4-9eab-2e0c77b1e1ef.png)
+![image](https://user-images.githubusercontent.com/52833089/235054239-08d66c78-376e-4428-bc53-c728266f9cac.png)
 
 #Let's start coding
 
