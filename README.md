@@ -27,7 +27,7 @@ The optimization problems that can be solved are mathematical expressions that m
 
 1. To use this framework, you need to download the released version:
 
-- [JMetaBFOP_v1.0.zip](https://github.com/garcialopez/JMetaBFOP/releases/tag/FRAMEWORK "Descargar")
+- [JMetaBFOP_v1.0](https://github.com/garcialopez/JMetaBFOP/releases/tag/FRAMEWORK "Descargar")
 
 2. To begin using the tool, you need to create a new project in **Java** (Java Application). In this case, we will be using the NetBeans 8.0.2 IDE.
 
