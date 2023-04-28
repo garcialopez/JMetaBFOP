@@ -1,62 +1,57 @@
 # JMetaBFOP
 
-El **TS-MBFOA** es un algoritmo basado en el forrajeo de bacterias y funciona para resolver problemas de optimización global.
+The **TS-MBFOA** is an algorithm based on bacterial foraging, and works to solve global optimization problems.
 
-En la codificación de este **framework** desarrollado en Java se aborda un algoritmo metaheurístico de inteligencia colectiva,
-que gracias a la buena calibración o ajuste de sus parámetros, funciona para encontrar
-una o un conjunto de soluciones a **problemas de optimización** de diversas áreas de
-estudio. Esta **metaheurística** esta basada en el forrajeo de bacterias. En la codificación del framework se
-incluyen problemas de optimización de Ingeniería Mecánica y Química y el conjunto de problemas del **CEC 2006**.
+This Java-based **framework** implements a collective intelligence metaheuristic algorithm that, thanks to its well-calibrated parameters, is effective in finding one or multiple solutions to optimization problems from various fields of study. This metaheuristic is based on bacterial foraging. The framework includes optimization problems from **Mechanical** and **Chemical Engineering**, as well as the set of problems from **CEC 2006**.
 
-Esta nueva herramienta tiene funcionalidades como: 
+This new tool has features such as:
 
-- Poder elegir y probar uno de los problemas de optimización integrados
-- Poder calibrar los parámetros propios del algoritmo
-- Permitir al usuario ingresar su propio problema a optimizar
-- Analizar los resultados y las estadísticas básicas (mejor, media, mediana, desviación estándar, peor valor, tasa de factibilidad, tasa de éxito y rendimiento exitoso)
+- Ability to choose and test one of the integrated optimization problems.
+- Ability to calibrate the algorithm's own parameters.
+- Allowing the user to input their own optimization problem.
+- Analyzing the results and basic statistics (best, mean, median, standard deviation, worst value, feasibility rate, success rate, and successful performance).
 
-Los problemas de optimización que se pueden resolver son expresiones matemáticas que deben de cumplir con lo siguiente:
+The optimization problems that can be solved are mathematical expressions that must comply with the following:
 
-- Función objetivo
-- Variables de diseño
-- Restricciones
-- Rango de variables
-- Mejor valor conocido
+- Objective function.
+- Design variables.
+- Constraints.
+- Variable range.
+- Known best value.
 
-**Un ejemplo de problemas de optimización es el siguiente:**
+**An example of an optimization problem is the following:**
 
 ![image](https://user-images.githubusercontent.com/52833089/155066384-74753153-a297-40f4-9eab-2e0c77b1e1ef.png)
 
-#Comencemos a codificar
+#Let's start coding
 
-1. Para poder usar este framework necesita descargar el mismo en su versión lanzada:
+1. To use this framework, you need to download the released version:
 
 - [JMetaBFOP_v1.0.zip](https://github.com/garcialopez/JMetaBFOP/files/9865880/JMetaBFOP_v1.0.zip "Descargar")
 
-
-2. Para comenzar a utilzar la herramienta se necesita crear un nuevo proyecto en **Java** (Java Application), para este caso utilizaremos el IDE NetBeans 8.0.2.
+2. To begin using the tool, you need to create a new project in **Java** (Java Application). In this case, we will be using the NetBeans 8.0.2 IDE.
 
 ![image](https://user-images.githubusercontent.com/52833089/155067744-13311c67-3fde-43a6-8f8b-b7d53a652402.png)
 
-3. Posteriormente, se necesita incluir el archivo dentro de las librerías del proyecto.
+3. Later on, you need to include the file within the project's libraries.
 
 ![image](https://user-images.githubusercontent.com/52833089/155068150-cc88d612-ba05-4cd5-b3f5-1fd04c3fc5a4.png)
 
-4. Finalmente, ya puedes comenzar a codificar...
+4. Finally, you can start coding...
 
-### Conociendo el framework
+### Knowing the framework
 
-El framework utiliza un evaluador de expresiones matemáticas gratuito para poder evaluar las expresiones matemáticas. Para ello, se utiliza mXparser por ser una herramienta muy potente con grandes características. Este lo puedes encontrar aquí <http://mathparser.org>.
+The framework uses a free mathematical expression evaluator to evaluate mathematical expressions. To do this, mXparser is used as a very powerful tool with great features. You can find it here: <http://mathparser.org>.
 
-El framework tiene tres clases el cual son los pilares para realizar una nueva ejecución de un problema integrado o insertados. Estas son las siguientes: 
+The framework has three classes that are the pillars for performing a new run of an integrated or inserted problem. These are as follows:
 
-|Clase|Métodos|Utilidad|
+|Class|Methods|Utility|
 |--------------------|----------------------------|--------------------|
 |     **Problem**    | setNameProblem<br />setFunction<br />setOrderVariables<br />setObj<br />setBestKnownValue<br />detectConstraints<br /> ...    | Nombre<br />función matemática<br />orden de variables<br />objetivo (min o max)<br />mejor valor conocido<br />restricciones<br />...  |
 |   **Configurator** |    setSb<br />setStepSize<br />setNc<br />setScalingFactor<br />setBacteriaReproduce<br />setRepcycle<br />setEvaluations<br /> | cantidad de bacterias<br />amaño de paso<br />número de ciclos quimiotáxicos<br />factor de escalamiento<br />número de bacterias<br />frecuencia de reproducción<br />número de evaluaciones |
 |   **RunTsmbfoa**   |    run    | Incia el algoritmo |
 
-Para comenzar a usar este framework, dentro del metodo `Main` se creara un objeto de la Clase **Problem**:
+To start using this framework, inside the `Main` method an object of the **Problem** class will be created:
 
 ~~~
 package ts_mbfofoa_run;
@@ -70,7 +65,7 @@ public class Main {
 }
 ~~~
 
-Para poder asignarle un problema a dicho objeto creado, se puede utilizar los métodos de la tabla anterior o bien asignar un problema de optimización de los integrados el cual, puede ser uno de los siguientes: 
+To assign a problem to this created object, you can use the methods from the previous table or assign one of the integrated optimization problems, which can be one of the following:
 
 - PressureVessel
 - ProcessSynthesisMINLP
@@ -81,44 +76,44 @@ Para poder asignarle un problema a dicho objeto creado, se puede utilizar los m�
 - G**15**_CEC2006, G**17**_CEC2006, G**18**_CEC2006
 - G**21**_CEC2006 al G**24**_CEC2006
 
-Para ello se debe de hacer lo siguiente:
+To do so, you must do the following:
 
 ~~~
   problem = new TensionCompressionSpring();
 ~~~
 
-Para calibrar los parametros propios del algoritmo se debe de usar los métodos de la tabla anterior o bien usar la configuración recomendada:
+To calibrate the algorithm's own parameters, you must use the methods from the previous table or use the recommended configuration:
 
 ~~~
   Configurator configurator = problem.getRecommendedSetting();
 ~~~
 
-Tambien se establece el número de ejecuciones independiente para la ejecución del algoritmo:
+Also, the number of independent runs for the algorithm's execution is established:
 
 ~~~
   problem.setExecutions(30);
 ~~~
 
-Finalmente, se hace la ejecución del algoritmo:
+Finally, the algorithm is executed:
 
 ~~~
   RunTsmbfoa stst = new RunTsmbfoa();
   stst.run(problem, configurator, true, true); 
 ~~~
 
-Nuestro código final queda de la siguiente manera:
+Our final code looks like the following:
 
 ![image](https://user-images.githubusercontent.com/52833089/155073092-9e50300b-6999-4765-bc36-16668962ee66.png)
 
-AL final de la ejecución se muestra el resultado obtenido para el problema de optimización seleccionado o insertado:
+At the end of the execution, the obtained result for the selected or inserted optimization problem is shown:
 
 ![image](https://user-images.githubusercontent.com/52833089/155073374-aeda1d23-6e85-4792-9bf3-58b67516f822.png)
 
-De igual manera muestra las estadísticas básicas: 
+Similarly, it shows the basic statistics:
 ![image](https://user-images.githubusercontent.com/52833089/155073481-261c2400-02be-49fc-bdf0-a5d34769050d.png)
 
 
-Puede visualizar los resultados completos en el siguiente archivo:
+You can view the complete results in the following file:
 [Resultados TS-MBFOA.txt](https://github.com/garcialopez/frameworkTSMBFOA/files/8114044/Resultados.TS-MBFOA.txt)
 
 
