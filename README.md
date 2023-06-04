@@ -1,4 +1,4 @@
-# JMetaBFOP
+# **JMetaBFOP**
 
 The **TS-MBFOA** is an algorithm based on bacterial foraging, and works to solve global optimization problems.
 
@@ -23,107 +23,372 @@ The optimization problems that can be solved are mathematical expressions that m
 
 ![image](https://user-images.githubusercontent.com/52833089/235054239-08d66c78-376e-4428-bc53-c728266f9cac.png)
 
-#Let's start coding
 
-1. To use this framework, you need to download the released version:
+## **Download and Configure JMetaBFOP in NetBeans**
 
-- [JMetaBFOP_v1.0](https://github.com/garcialopez/JMetaBFOP/releases/tag/FRAMEWORK "Descargar")
+### Step 1: Download the JMetaBFOP release
 
-2. To begin using the tool, you need to create a new project in **Java** (Java Application). In this case, we will be using the NetBeans 8.0.2 IDE.
+1. Download the release: [JMetaBFOPv1.0.1](https://github.com/garcialopez/JMetaBFOP/releases/download/framework/JMetaBFOP_v1.0.1.zip)
+2. Click on the link to download the ZIP file of the release.
+3. Save the ZIP file to a location of your choice on your computer.
 
-![image](https://user-images.githubusercontent.com/52833089/155067744-13311c67-3fde-43a6-8f8b-b7d53a652402.png)
+### Step 2: Extract the ZIP file
 
-3. Later on, you need to include the file within the project's libraries.
+1. Navigate to the location where you saved the downloaded ZIP file.
+2. Right-click on the ZIP file and select "Extract Here" or "Unzip Here". This will create an uncompressed folder with the release name.
 
-![image](https://user-images.githubusercontent.com/52833089/155068150-cc88d612-ba05-4cd5-b3f5-1fd04c3fc5a4.png)
+### Step 3: Create a new project in NetBeans
 
-4. Finally, you can start coding...
+1. Open NetBeans and select **File** from the menu bar.
+2. Select **New Project** from the dropdown menu.
+3. In the **New Project** window, select **Java** in the category and **Java Application** under projects.
+4. Click **Next**.
 
-### Knowing the framework
+![1](https://github.com/garcialopez/JMetaBFOP/assets/52833089/e18f19a5-ad0c-494f-a6fa-cdd4ec61549c)
 
-The framework uses a free mathematical expression evaluator to evaluate mathematical expressions. To do this, mXparser is used as a very powerful tool with great features. You can find it here: <http://mathparser.org>.
+### Step 4: Configure the project
+
+1. In the project configuration window, specify a name and location for your project.
+2. Click **Finish**.
+
+### Step 5: Add the JAR files to the project
+
+1. In the NetBeans project window, right-click on the **Libraries** folder within your project and select **Add JAR/Folder**.
+2. Navigate to the uncompressed folder of the JMetaBFOP release.
+3. Select the **JMetaBFOP_v1.0.1.jar** file and click **Open**. This JAR file contains the JMetaBFOP framework.
+4. Repeat the previous steps to add the **MathParser.org-mXparser.jar** file, which is located in the same uncompressed folder. This JAR file is a necessary dependency for solving user-defined CNOPs.
+
+![2](https://github.com/garcialopez/JMetaBFOP/assets/52833089/5edf88af-00be-476d-8200-86ec3e511b55)
+
+### Step 6: Verify the configuration
+
+1. Ensure that the JAR files have been successfully added to the **Libraries** folder of the project.
+2. Verify that the JAR files appear in the **Libraries** section within the NetBeans project window.
+
+You have now downloaded the JMetaBFOP release and loaded the JAR files into your Java project in NetBeans! You can start using the framework to solve CNOPs and leverage the capabilities of the MathParser.org-mXparser library to define your own CNOPs.
+
+JMetaBFOP utilizes a free mathematical expression evaluator called mXparser. This tool offers great features and allows for efficient evaluation of mathematical expressions. You can find more information about mXparser on its official website: http://mathparser.org.
+
+## About JMetaBFOP
 
 The framework has three classes that are the pillars for performing a new run of an integrated or inserted problem. These are as follows:
 
-|Class|Methods|Utility|
-|--------------------|----------------------------|--------------------|
-|     **Problem**    | setNameProblem<br />setFunction<br />setOrderVariables<br />setObj<br />setBestKnownValue<br />detectConstraints<br /> ...    | Nombre<br />función matemática<br />orden de variables<br />objetivo (min o max)<br />mejor valor conocido<br />restricciones<br />...  |
-|   **Configurator** |    setSb<br />setStepSize<br />setNc<br />setScalingFactor<br />setBacteriaReproduce<br />setRepcycle<br />setEvaluations<br /> | cantidad de bacterias<br />amaño de paso<br />número de ciclos quimiotáxicos<br />factor de escalamiento<br />número de bacterias<br />frecuencia de reproducción<br />número de evaluaciones |
-|   **RunTsmbfoa**   |    run    | Incia el algoritmo |
+| Class    |
+|----------|
+| CNOP     |
+| TSMBFOA  |
+| Constraints |
 
-To start using this framework, inside the `Main` method an object of the **Problem** class will be created:
 
-~~~
-package ts_mbfofoa_run;
+# **Getting Started with JMetaBFOP**
 
-public class Main {
-    public static void main(String[] args) {  
-    
-             Problem problem;       
-             
-    }          
+To use JMetaBFOP to solve CNOP (Constrained Numerical Optimization Problems) problems, you need to follow these steps:
+
+## Step 1: Import the necessary classes
+
+Make sure to import the required classes from JMetaBFOP:
+
+```java
+import com.garcialopez.cnops.*;
+import com.garcialopez.metaheuristic.tsmbfoa.TSMBFOA;
+import com.garcialopez.optimizationmodel.CNOP;
+```
+
+## Step 2: Create an instance of CNOP
+
+Inside the main method, create an object of the `CNOP` class using one of the built-in implementations. For example:
+
+```java
+//Create an instance of CNOP
+CNOP cnop = new TensionCompressionSpring();
+```
+## Step 3: Create an instance of TSMBFOA
+
+After creating the CNOP object, you can create an instance of the `TSMBFOA` class and pass the CNOP object and `true` as arguments. This will enable displaying execution information on the console.
+
+```java
+// Create an instance of TSMBFOA
+TSMBFOA tsmbfoa = new TSMBFOA(cnop, true);
+```
+
+## Step 4: Execute the algorithm
+
+To execute the algorithm, simply call the `run()` method on the TSMBFOA object.
+
+```java
+// Run the algorithm
+tsmbfoa.run();
+```
+
+**Great!** Now you have completed the initial steps to use JMetaBFOP. The complete code looks like this:
+
+```java
+import com.garcialopez.cnops.*;
+import com.garcialopez.metaheuristic.tsmbfoa.TSMBFOA;
+import com.garcialopez.optimizationmodel.CNOP;
+
+public class ExampleJMetaBFOP {
+
+    public static void main(String[] args) {
+        //Create an instance of CNOP
+        CNOP cnop = new TensionCompressionSpring();
+        
+        // Create an instance of TSMBFOA
+        TSMBFOA tsmbfoa = new TSMBFOA(cnop, true);
+        
+        // Run the algorithm
+        tsmbfoa.run();
+    }
 }
-~~~
+```
 
-To assign a problem to this created object, you can use the methods from the previous table or assign one of the integrated optimization problems, which can be one of the following:
+From here, you can continue configuring the parameters, executing the algorithm, and analyzing the results according to your needs.
 
-- PressureVessel
-- ProcessSynthesisMINLP
-- TensionCompressionSpring
-- DesignReinforcedConcreteBeam
-- QuadraticallyConstrainedQuadraticProgram
-- G**01**_CEC2006 al G**13**_CEC2006
-- G**15**_CEC2006, G**17**_CEC2006, G**18**_CEC2006
-- G**21**_CEC2006 al G**24**_CEC2006
+Based on the above, the console results would be as follows:
 
-To do so, you must do the following:
+**Results of each generation:**
 
-~~~
-  problem = new TensionCompressionSpring();
-~~~
+| # | x1 | x2 | x3 | FO | SVR |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 0.051708539528959534 | 0.3571847938513473 | 11.261734071828137 | 0.01266536820426279 | 0.0 |
+| 2 | 0.051676889753363014 | 0.3564226191704028 | 11.3063773520769 | 0.012665368405583374 | 0.0 |
+| 3 | 0.05165730914324691 | 0.3559516235468301 | 11.334131670095449 | 0.01266541069690316 | 0.0 |
+| 4 | 0.05173013895414509 | 0.357704322953273 | 11.231488883251343 | 0.012665437465644774 | 0.0 |
+| 5 | 0.051731152547499326 | 0.35772835647753365 | 11.230119780166316 | 0.012665474130654525 | 0.0 |
+| 6 | 0.051749150661890085 | 0.3581626818090529 | 11.204897362501681 | 0.012665484732798228 | 0.0 |
+| 7 | 0.05169581795769177 | 0.3568780883779779 | 11.279792818292963 | 0.012665490286198131 | 0.0 |
+| 8 | 0.05163179738412301 | 0.35534166599784683 | 11.370342172267488 | 0.012665523456655696 | 0.0 |
+| 9 | 0.0517353453543781 | 0.3578288070228064 | 11.224313889650416 | 0.012665523778309545 | 0.0 |
+| 10 | 0.0516462332237205 | 0.3556862990073761 | 11.34992250893015 | 0.01266552468031105 | 0.0 |
+| ... | ... | ... | ... | ... | ... | ... |
+| 48 | 0.05173391552008679 | 0.3578798346177322 | 11.221496661543737 | 0.012665601493420716 | 0.0 |
+| 49 | 0.05173908928373005 | 0.357928760009021 | 11.21768430813936 | 0.012665617601847234 | 0.0 |
+| 50 | 0.05169388810219874 | 0.3567367431254337 | 11.282911034206164 | 0.012665648300017164 | 0.0 |
 
-To calibrate the algorithm's own parameters, you must use the methods from the previous table or use the recommended configuration:
+**Statistics:**
 
-~~~
-  Configurator configurator = problem.getRecommendedSetting();
-~~~
+| Metric              | Value                    |
+|---------------------|--------------------------|
+| Best Value          | 0.01266536820426279      |
+| Mean Value          | 0.01666204625118927      |
+| Median              | 0.012665670830097016     |
+| Standard Deviation  | 0.027974428535010795     |
+| Worst Value         | 0.21248304599162915      |
+| Feasible Rate       | 100%                    |
+| Success Rate        | 100%                    |
+| Success Performance | 3603.0                   |
+| Time                | 0                        |
 
-Also, the number of independent runs for the algorithm's execution is established:
+## The integrated CNOPs available for you to test are:
 
-~~~
-  problem.setExecutions(30);
-~~~
+| Class                            | Class                            | Class                           |
+|--------------------------------------|--------------------------------------|-------------------------------------|
+| DesignReinforcedConcreteBeam         | G10_CEC2006                          | G21_CEC2006                         |
+| G01_CEC2006                          | G11_CEC2006                          | G22_CEC2006                         |
+| G02_CEC2006                          | G12_CEC2006                          | G23_CEC2006                         |
+| G03_CEC2006                          | G13_CEC2006                          | G24_CEC2006                         |
+| G04_CEC2006                          | G15_CEC2006                          | PressureVessel                      |
+| G05_CEC2006                          | G17_CEC2006                          | ProcessSynthesisKocis98             |
+| G06_CEC2006                          | G18_CEC2006                          | ProcessSynthesisYuan88              |
+| G07_CEC2006                          |                                      | QuadraticallyConstrainedQuadraticProgram |
+| G08_CEC2006                          |                                      | TensionCompressionSpring             |
+| G09_CEC2006                          |                                      |                                     |
 
-Finally, the algorithm is executed:
+# **Customization and Calibration of the Algorithm**
 
-~~~
-  RunTsmbfoa stst = new RunTsmbfoa();
-  stst.run(problem, configurator, true, true); 
-~~~
+1. **Population size**: Set the size of the population in the algorithm.
 
-Our final code looks like the following:
+```java
+tsmbfoa.setSb(14);
+```
 
-![image](https://user-images.githubusercontent.com/52833089/155073092-9e50300b-6999-4765-bc36-16668962ee66.png)
+2. **Number of chemotactic cycles**: Specify the number of chemotactic cycles in the algorithm.
 
-At the end of the execution, the obtained result for the selected or inserted optimization problem is shown:
+```java
+tsmbfoa.setNc(7);
+```
 
-![image](https://user-images.githubusercontent.com/52833089/155073374-aeda1d23-6e85-4792-9bf3-58b67516f822.png)
+3. **Step size**: Set the step size for the chemotaxis process.
 
-Similarly, it shows the basic statistics:
-![image](https://user-images.githubusercontent.com/52833089/155073481-261c2400-02be-49fc-bdf0-a5d34769050d.png)
+```java
+tsmbfoa.setStepSize(0.0005);
+```
+
+4. **Scaling factor**: Adjust the scaling factor for the algorithm.
+
+```java
+tsmbfoa.setScalingFactor(1.95);
+```
+
+5. **Number of bacteria to reproduce**: Specify the number of bacteria to reproduce in each generation.
+
+```java
+tsmbfoa.setBacteriaReproduce(1);
+```
+
+6. **Reproduction frequency**: Set the frequency of reproduction in the algorithm.
+
+```java
+tsmbfoa.setRepcycle(100);
+```
+
+7. **Number of evaluations**: Define the maximum number of function evaluations allowed.
+
+```java
+tsmbfoa.setEvaluations(20000);
+```
+
+8. **Number of independent algorithm iterations**: Set the number of independent algorithm iterations to perform.
+
+```java
+tsmbfoa.setExecutions(30);
+```
+
+### 1. You can adjust these parameters according to your needs and experiment with different values to achieve better results.
+
+### 2. You now have the option to execute the customized algorithm with the calibrated parameters. Remember to use the `run()` method on the tsmbfoa object to start the execution.
+
+### 3. Explore and enjoy the optimization process with JMetaBFOP!.
+
+### 4. Remember that you can analyze the obtained results and adjust the parameters again to further improve the algorithm's performance.
+
+The code with the configuration would be as follows:
+
+```java
+import com.garcialopez.cnops.*;
+import com.garcialopez.metaheuristic.tsmbfoa.TSMBFOA;
+import com.garcialopez.optimizationmodel.CNOP;
+
+public class ExampleJMetaBFOP {
+
+    public static void main(String[] args) {
+        CNOP cnop = new TensionCompressionSpring();
+        
+        TSMBFOA tsmbfoa = new TSMBFOA(cnop, true);
+        
+        tsmbfoa.setSb(14);
+        tsmbfoa.setNc(7);
+        tsmbfoa.setStepSize(0.0005);        
+        tsmbfoa.setScalingFactor(1.95);
+        tsmbfoa.setBacteriaReproduce(1);
+        tsmbfoa.setRepcycle(100);
+        tsmbfoa.setEvaluations(20000);
+        tsmbfoa.setExecutions(30);
+        
+        tsmbfoa.run();
+    }
+}
+```
+
+The results obtained now are from 30 independent algorithm executions, as configured by the number of algorithm executions.
+
+You can analyze the results of each execution to assess the algorithm's performance and evaluate its convergence and optimization quality.
+
+# **Customizing your own CNOP**
+
+## If your CNOP is not integrated, you can input it yourself by following the code below.
+
+Instead of instantiating an integrated CNOP, you need to create the following:
+
+```java
+CNOP cnop = new CNOP();
+```
+
+Then, set the CNOP information such as name, type, best-known value, objective function, variable order, and variable ranges.
+
+```java
+cnop.setNameProblem("Tension/compression spring");
+cnop.setBestKnownValue(0.012681);
+cnop.setType(CNOP.MINIMIZATION);
+cnop.setFunction("(N + 2) * D * d^2");
+cnop.setOrderVariables("d;D;N");
+cnop.setVariableRange("(0.05, 2);(0.25, 1.3);(2, 15)");
+```
+
+Import the Constraints class:
+
+```java
+import com.garcialopez.optimizationmodel.Constraints;
+```
+
+Create a Constraints object:
 
 
-You can view the complete results in the following file:
-[Results TS-MBFOA.txt](https://github.com/garcialopez/frameworkTSMBFOA/files/8114044/Resultados.TS-MBFOA.txt)
+```java
+Constraints constraints = new Constraints();
+```
+
+Use the `add` method to add the constraints:
+
+```java
+constraints.add("1-(D^3*N)/(71785*d^4) <= 0");
+constraints.add("((4*(D^2)-d*D)/(12566*(D*(d^3)-(d^4)))) + (1.0/(5108*(d^2)))-1 <= 0");
+constraints.add("1.0-(140.45*d/((D^2)*N)) <= 0");
+constraints.add("((D+d)/1.5)-1 <= 0");
+```
+
+Set the constraints for the CNOP:
+
+```java
+cnop.setConstraints(constraints);
+```
+
+Finally, parse the CNOP:
+
+```java
+cnop.parserCNOP();
+```
+
+Then, pass it to TSMBFOA:
+
+```java
+TSMBFOA tsmbfoa = new TSMBFOA(cnop, true);
+```
+
+Here is the complete code with the customization of your own CNOP:
 
 
+```java
+import com.garcialopez.metaheuristic.tsmbfoa.TSMBFOA;
+import com.garcialopez.optimizationmodel.CNOP;
+import com.garcialopez.optimizationmodel.Constraints;
 
+public class ExampleJMetaBFOP {
 
+    public static void main(String[] args) {
+        CNOP cnop = new CNOP();
 
+        cnop.setNameProblem("Tension/compression spring");
+        cnop.setBestKnownValue(0.012681);
+        cnop.setType(CNOP.MINIMIZATION);
+        cnop.setFunction("(N + 2) * D * d^2");
+        cnop.setOrderVariables("d;D;N");
+        cnop.setVariableRange("(0.05, 2);(0.25, 1.3);(2, 15)");
 
+        Constraints constraints = new Constraints();
+        constraints.add("1-(D^3*N)/(71785*d^4) <= 0");
+        constraints.add("((4*(D^2)-d*D)/(12566*(D*(d^3)-(d^4)))) + (1.0/(5108*(d^2)))-1 <= 0");
+        constraints.add("1.0-(140.45*d/((D^2)*N)) <= 0");
+        constraints.add("((D+d)/1.5)-1 <= 0");
+        cnop.setConstraints(constraints);
 
+        cnop.parserCNOP();
 
+        TSMBFOA tsmbfoa = new TSMBFOA(cnop, true);
 
+        tsmbfoa.setSb(14);
+        tsmbfoa.setNc(7);
+        tsmbfoa.setStepSize(0.0005);
+        tsmbfoa.setScalingFactor(1.95);
+        tsmbfoa.setBacteriaReproduce(1);
+        tsmbfoa.setRepcycle(100);
+        tsmbfoa.setEvaluations(20000);
+        tsmbfoa.setExecutions(30);
 
+        tsmbfoa.run();
 
+    }
+}
+```
 
+#### *JMetaBFOP offers numerous advantages that make it a powerful tool for solving Constrained Numerical Optimization Problems (CNOPs). Its straightforward usage makes it accessible to both beginners and experienced users. The ability to easily customize the algorithm's parameters allows for fine-tuning and optimization according to specific problem requirements. Additionally, the flexibility to include both integrated CNOPs and personalized CNOPs provides a wide range of options for problem-solving. With JMetaBFOP, users can confidently explore and tackle CNOPs with efficiency and ease.*
