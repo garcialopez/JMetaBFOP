@@ -398,3 +398,12 @@ If you don't have a robust knowledge of Java programming, you can still use our 
 In the repository, you will find detailed instructions on how to download, configure, and run JMetaBFOP-UI. Additionally, you can explore the code and contribute to the project if you're interested.
 
 ![MainUI](https://github.com/garcialopez/JMetaBFOP/assets/52833089/dc896c2d-916d-4101-ba9d-6086339763a2)
+
+## **In future work, we propose a list of to-do:**
+
+Integration of a set of evolutionary and swarm metaheuristics into the JMetaBFOP framework for solving global constrained optimization problems.
+- Incorporate the successful swim and Successful swim rate metrics to measure the exploration and exploitation of the TS-MBFOA algorithm in future experiments.
+- Incorporate the irace tool to automatically search the best TS-MBFOA parameter configuration.
+- Integrate modules to validate the objective function and constraints.
+- Incorporate Multi-Objective Optimization Problems with constraints into the framework.
+
